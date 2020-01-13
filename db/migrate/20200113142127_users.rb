@@ -1,11 +1,10 @@
 class Users < ActiveRecord::Migration
-  def change
-    create_table :notes do |t|
-        t.string    :title
-        t.text  :body
-        t.timestamps
+  def up
+    create_table :users do |t|
+      t.string :username
+      t.string :password_digest
     end
   end
   def down
-    drop_table  :notes
+    drop_table :users
   end
